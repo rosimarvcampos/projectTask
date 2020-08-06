@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <footer class="footer f-def"> <h1>Projeto Gerenciador De Tarefas</h1> </footer>
+        <section class="sec f-def bg-1">
+          <% value.forEach((data, idx) => {  %>
+            <form >
+              <div id="<%= data._id%>" class="card">
+                <div class="card-header bg-2 b">
+                    <h2  class="h2-i"> <input name="title" class="i-def" disabled value="<%=data.title%>">  </h2>
+                  <div class="btn-lists">
+                    <input type="hidden" name="id" value="<%= data._id%>" >
+                    <button onclick="saveFunc(event)"  class="container-btn btn btn-primary btn-sm btn-vh">Edit</button>
+                    <button formmethod="POST" formaction="http://localhost:4001/edit" class="btnS container-btn btn btn-primary btn-sm btn-vh btn-none">salvar</button>
+                    <button formmethod="POST" formaction="http://localhost:4001/del" class="container-btn btn btn-primary btn-sm btn-vh">Excluir</button>
+                  </div>
+                </div>
+                <div class="card-body bg-2 b">
+                <p class="card-text">
+                  <input class="i-def" name="description" disabled value="<%= data.description%>" >
+                </p>
+                </div>
+              </div>
+            </form>
+          <% }) %>
+        </section>
+        <nav class="navbar f-def bg-1">
+            <form class="tamanho-def-25">
+                <div class="form-group">
+                  <label for="title"><h2>Titulo</h2></label>
+                  <input type="text" onkeyup="selectFunc(event)" name="title" class="form-control bg-2" placeholder="Informe o Titulo da Tarefa">
+                </div>
+                <div class="form-group">
+                  <label id="inputForm" for="description"> <h2>Descrição</h2></label>
+                  <textarea id="textAreaForm"disabled name="description" class="form-control p-5 bg-2" id="description" rows="24" placeholder="Informe a Descricção Da Tarefa"></textarea>
+                </div>
+                <button formmethod="POST" formaction="http://localhost:4001/" disabled id="btn-form" class="btn btn-primary btn-lg tamanho-def-25">+Add</button>
+               </div>
+            </form>
+        </nav>
+    </div>
+    <script src="/js/funcs.js"></script>
+</body>
+</html>

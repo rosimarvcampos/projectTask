@@ -1,0 +1,85 @@
+.f-def {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bg-2 {
+    background-color: #fafafa !important;
+}
+
+.bg-1 {
+    background-color: rgb(230, 230, 230) !important;
+}
+
+.footer {
+    grid-area: cabec;
+    color: whitesmoke;
+    background-color: #337ab7;
+}
+
+.sec {
+    grid-area: sec;
+    border-left: 1px solid rgb(194, 194, 194);
+    justify-content: start;
+    overflow: scroll;
+}
+
+.navbar {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 2fr 12fr;
+    grid-template-columns: .4fr 1fr;
+    grid-template-areas: 'cabec cabec'
+                        'navbar sec';
+    height: 100vh;
+}
+
+.tamanho-def-25 {
+    width: 25vw !important;
+}
+.card {
+    width: 65vw;
+}
+
+.card-header {
+    width: 100%;
+    margin-top: 30px;
+    border: 1px solid;
+    border-bottom: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card-body {
+    border: 1px solid;
+    padding: 30px;
+    border-collapse: collapse;
+}
+
+.b {
+    border-color: rgb(206, 206, 206);
+}
+
+.btn-vh {
+    height: 10%;
+}
+
+.btn-none {
+    display: none !important;
+}
+.i-def{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #337ab7;
+    outline:  none;
+    
+}
